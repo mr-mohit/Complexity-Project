@@ -4,7 +4,7 @@ let mongoose = require('mongoose');
 let passport = require('passport');
 
 //create the user Model instance
-let userModel = require('../models/user');
+let userModel = require('../Models/user');
 let User = userModel.User; // alias
 
 /* GET home page. */
