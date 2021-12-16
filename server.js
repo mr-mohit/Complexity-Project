@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('./Server/Config/app');
+var app = require('./Server/config/app');
 var debug = require('debug')('comp229-complexity-group10:server');
 var http = require('http');
 
