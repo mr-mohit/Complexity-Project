@@ -4,7 +4,7 @@ let mongoose = require('mongoose');
 let passport = require('passport');
 
 //create the user Model instance
-let Survey = require('../models/survey');
+let Survey = require('../Models/survey');
 
 //helper function for guard purpose
 function requireAuth(req, res, next)
