@@ -1,0 +1,64 @@
+<% include ../partials/header.ejs %>
+
+<% include ../partials/main_nav.ejs %>
+
+<!-- Content for the Create Survey page -->
+<div class="container">
+    <div calss="row">
+        <div class="offset-md-12 col-md-8">
+            <h1><%= title %></h1>
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="titleTextField">Title</label>
+                    <input type="text" class="form-control"
+                    id="title"
+                    placeholder="Enter Title"
+                    name="title"
+                    value="<%= Survey.title %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descriptionTextField">Description</label>
+                    <textarea type="text" class="form-control"
+                    id="description"
+                    rows="4"
+                    placeholder="Enter description"
+                    name="description" 
+                    value="<%= Survey.description %>"
+                    required></textarea>
+                </div>
+
+                </div>
+                <ul class="form-group form-group-flush">
+               <!-- <li class="form-group-item">
+                    <label for="active">Choose active:</label>
+                    <select name="active" id="active">
+                    <option value="true">yes</option>
+                    <option value="false">no</option>
+                    </select> 
+                </li> -->
+                <li class="form-group-item">
+                    Start Date: <input type="date" id="startDate" name="startDate" value="<%= Survey.startDate %>" />
+                </li>
+                <li class="form-group-item">
+                    Expiry Date: <input type="date" id="expiry" name="expiry" value="<%= Survey.expiry %>" >
+                </li>
+                </ul>
+            </div>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+
+                    <a href="/survey-list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<% include ../partials/bottom_nav.ejs %>
+
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,55 @@
+
+<% include ../partials/header.ejs %>
+
+<% include ../partials/main_nav.ejs %>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="row">
+            <div class="offset-md-1 col-md-11">
+                <h1><%= title %></h1>
+                
+                  <% if(typeof displayName == 'string' && displayName) { %>
+                <a href="/survey-list/create" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i> Create Survey</a>
+                <% } %>
+                <br>
+                <table class="table table-striped table-bordered table-hover">
+                <thead class="table-dark">
+                    <!-- Header Row-->
+                    <tr class="d-flex">
+                        <th class="text-center col-2">Tile</th>
+                        <th class="text-center col-4">Description</th>
+                        <th class="text-center col-2">Expiry</Em></th>
+                    <% if(typeof displayName == 'string' && displayName) { %>
+                            <th class="text-center col-1">Update</th>
+                            <th class="text-center col-1">Delete</th> 
+                    <% } %>
+                    </tr>
+                    </thead>
+                    <!-- Repeatable template row -->
+                    
+                    <% for(let count = 0; count < SurveyList.length; count++) { %>
+                        <tr class="d-flex">
+                            <td class="text-center col-2"><%= SurveyList[count].title%></td>
+                            <td class="text-center col-4"><%= SurveyList[count].description%></td>
+                            <td class="text-center col-2"><%= SurveyList[count].expiry%></td>
+                                <td class="text-center col-1">
+                                    <a href="/survey-list/update/<%= SurveyList[count]._id %>"  class="btn btn-primary btn-sm">
+                                    <i class="fas fa-pencil-alt"></i> Update</a>  
+                                </td>
+                                <td class="text-center col-1">
+                                    <a href="/survey-list/delete/<%= SurveyList[count]._id %>"  class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i> Delete</a>
+                                </td>
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+    </main>
+
+<% include ../partials/bottom_nav.ejs %>
+
+<% include ../partials/footer.ejs %> 
+
