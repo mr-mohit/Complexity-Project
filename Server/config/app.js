@@ -56,7 +56,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //create a User Model Intance
-let userModel = require('../models/user');
+let userModel = require('../Models/user');
 let User = userModel.User;
 
 // implement a User Authentication Strategy
